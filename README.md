@@ -1,12 +1,12 @@
-**IMGSched**
+# IMGSched
 IMGSched is an application for scheduling meetings made with Django and Django Rest framework.
 
-**Tech stack**
--python3
--pip3
--virtualenv
+# Tech stack
+- python3
+- pip3
+- virtualenv
 
-**Setup**
+# Setup
 1. Clone the repository
 `$ git clone https://github.com/codefab99/IMGSched.git`
 `$ cd IMGSched`
