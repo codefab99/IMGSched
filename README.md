@@ -10,7 +10,7 @@ IMGSched is an application for scheduling meetings made with Django and Django R
 1. Clone the repository <br />
 `$ git clone https://github.com/codefab99/IMGSched.git` <br />
 `$ cd IMGSched`
-2. Install pip3
+2. Install pip3 <br />
 `sudo apt-install python3-pip`
 3. Setup virtual environment <br />
 `$ sudo apt-get install python3-venv` <br />
