@@ -16,3 +16,9 @@ class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ('url', 'first_name', 'last_name', 'meeting_invited', 'meetings')
+
+class CommentSerializer(serializers.ModelSerializer):
+    user = serializers.ReadOnlyField(source='user_id.first_name')
+    class Meta:
+        model = Comment
+        fields = ('id', 'time', 'comment_text','user')

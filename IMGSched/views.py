@@ -24,7 +24,8 @@ class UserViewSet(viewsets.ReadOnlyModelViewSet):
     '''
     This viewset automatically provides 'list' and 'detail' actions.
     '''
-    queryset = User.objects.all()
+    permission_classes = [IsOwner]
+	queryset = User.objects.all()
     serializer_class = UserSerializer
 
 class MeetingViewSet(viewsets.ModelViewSet):
@@ -34,8 +35,7 @@ class MeetingViewSet(viewsets.ModelViewSet):
 	'''
 	queryset = Meeting.objects.all()
 	serializer_class = MeetingSerializer
-	permission_class = (permissions.IsAuthenticatedOrReadOnly,
-		IsOwnerOrReadOnly,)
+	permission_class = [IsOwnerOrAdmin]
 
 	def perform_create(self, serializer):
 		serializer.save(host=self.request.user)
