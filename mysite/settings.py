@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'social_django',
     'IMGSched',
     'corsheaders',
+    'channels',
+    'channels_api'
 ]
 
 MIDDLEWARE = [
@@ -106,13 +108,14 @@ CORS_ORIGIN_WHITELIST = (
        'http://localhost:3000',
 )
 
+ASGI_APPLICATION = 'mysite.routing.application'
 WSGI_APPLICATION = 'mysite.wsgi.application'
 SOCIAL_AUTH_URL_NAMESPACE = 'social'
 LOGIN_URL = 'login'
 LOGOUT_URL = 'logout'
 LOGIN_REDIRECT_URL = 'home'
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'xxxxxxxxxxxxxxxxxx'
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'xxxxxxxxxxxxxxxxxxxx'
 
 
 # Database

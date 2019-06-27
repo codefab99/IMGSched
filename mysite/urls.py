@@ -16,8 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 from django.contrib.auth import views as auth_views
-
 from IMGSched import views as core_views
+from IMGSched import urls
 
 urlpatterns = [
     path('', core_views.home, name='home'),
@@ -25,6 +25,7 @@ urlpatterns = [
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
     path('oauth/', include('social_django.urls', namespace='social')),
     path('admin/', admin.site.urls),
-    path('api/', include('rest_framework.urls')),
+    path('api-auth/',include('rest_framework.urls')),
+    path('channels-api/',include('channels_api.urls')),
     path('', include('IMGSched.urls'))
 ]
