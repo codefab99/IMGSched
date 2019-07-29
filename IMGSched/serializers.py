@@ -35,7 +35,7 @@ class UserProfileSerializer(serializers.ModelSerializer):
 	    return student
 
 class CommentSerializer(serializers.ModelSerializer):
-    user = serializers.ReadOnlyField(source='user_id.first_name')
+    comment_user = serializers.ReadOnlyField(source='user_id.first_name')
     class Meta:
         model = Comment
-        fields = ('id', 'time', 'comment_text','user')
+        fields = ('id', 'time', 'comment_text','comment_user')
