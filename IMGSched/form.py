@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-from schedule.models import UserProfile
+from IMGSched.models import UserProfile
 
 USER_ROLE = (
         (1, 'NORMAL USER'),
