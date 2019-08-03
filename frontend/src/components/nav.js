@@ -14,7 +14,7 @@ function nav(props){
             <li onClick={()=> props.display_form('signup')}>Sign Up</li>
         </ul>
     );
-    return <div>{props.logged_in ? loggen_in_nav : logged_out_nav}</div>
+    return <div>{props.logged_in ? logged_in_nav : logged_out_nav}</div>
 }
 export default nav;
 

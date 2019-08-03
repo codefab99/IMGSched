@@ -1,4 +1,5 @@
 import axios from 'axios';
+
 const API_URL = 'http://127.0.0.1:8000';
 
 export default class Service{
@@ -21,8 +22,8 @@ export default class Service{
       };
 		return axios.put(url,meeting,{headers});
 	}
-	getComment(fk) {
-		const url = `API_URL/IMGSched/comment/${fk}`;
+	getComment(gk) {
+		const url = `API_URL/IMGSched/comment/${gk}`;
 		const headers = {
          'Authorization': `JWT ${window.localStorage.getItem('token')}`
       };

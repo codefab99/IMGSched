@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import MeetingForm from './MeetingForm';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
-import Service from './Service';
+import Service from './service';
 import {Redirect} from 'react-router-dom';
-import MeetingComment from './MeetingComment';
+import MeetingComment from './Comment';
 
 const service = new Service();
 class  profile extends React.Component{

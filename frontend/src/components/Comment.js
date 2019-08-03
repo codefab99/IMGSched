@@ -1,7 +1,14 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
+var path= window.location.pathname;
+var room = path.substring(path.lastIndexOf('/') + 1);
 var url = window.location.href;
+var myParam = window.location.search.split('user=')[1];
+
+export const CommentSocket = new WebSocket(
+    'ws://' + '127.0.0.1:8000' + '/ws/IMGSched/' + room + '/'
+);
 
 class Comment extends React.Component{
     constructor(props){
@@ -18,7 +25,7 @@ class Comment extends React.Component{
         this.getComment();
         CommentSocket.onmessage = function(e){
             var data = JSON.parse(e.data);
-            var msg = data['message'];
+            var message = data['message'];
             document.querySelector('#comment-log').value += (message + '\n');
         };
     }
